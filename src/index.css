@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Dancing+Script:wght@700&family=Inter:wght@400;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Custom font variables */
+  --font-bubble: "Gloria Hallelujah", cursive;
+  --font-serif: "Playfair Display", serif;
+  --font-script: "Dancing Script", cursive;
+  --font-outfit: "Outfit", sans-serif;
+
+  /* Base styles */
+  font-family: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  background-color: #fff5f7;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: #ffc1cc;
+  color: #a30029;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes candlelight {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+    filter: blur(40px);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+    filter: blur(60px);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+
+  50% {
+    transform: translateX(30px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
+.animate-float-up {
+  animation: floatUp linear infinite;
+}
+
+.animate-candlelight {
+  animation: candlelight 4s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 10s ease-in-out infinite;
+}
+
+.glass-premium {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(194, 0, 84, 0.15);
+}
